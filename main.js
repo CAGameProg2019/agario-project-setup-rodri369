@@ -5,8 +5,7 @@ canvas.height = window.innerHeight;
 
 let player;
 let mpos;
-let velVetor = new Vector(0,0_;
-)
+let velVector = new Vector(0,0);
 let foods = [];
 let colors = [
     'blue',
@@ -27,7 +26,10 @@ function randomColor() {
     return colors[index];
 }
 function init() {
-    for(i=0; i<100;i++){
+    mpos = new Vector(canvas.width/2, canvas.height/2);
+
+    player = new Player(canvas.width/2, canvas.height/2,25, randomColor());
+    for(let i=0; i<100;i++){
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         let color = randomColor();
