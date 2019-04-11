@@ -1,4 +1,4 @@
-class Player extends Food{
+class Player extends Food {
 
     constructor(x,y,radius, color) {
         super(x, y, radius, color);
