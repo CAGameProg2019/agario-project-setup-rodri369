@@ -10,8 +10,6 @@ class Vector {
         this.y += vec.y;
         return this;
     }
-
-    //functions to write for HW
     subVector(vec){
         this.x -=vec.x;
         this.y -= vec.y;
@@ -19,10 +17,25 @@ class Vector {
 
     }
 
+    dist(vec){
+        let x = vec.x - this.x;
+        let y= vec.y - this.y;
+        return Math.sqrt(x*x + y*y);
+    }
+
     scale(s){
         this.x *=s;
         this.y *= s;
         return this;
+
+    }
+
+    magnitude() {
+        return(Math.sqrt(this.x*this.x + this.y*this.y));
+    }
+
+    toDirVec() {
+        this.scale(1/this.magnitude());
 
     }
     toString(){
