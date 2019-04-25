@@ -59,6 +59,7 @@ function init() {
 
 function update() {
     c.clearRect(0,0,canvas.width, canvas.height);
+    draw(c);
 
     player.update(mpos);
     for(let i=0;i<foods.length;i++){
