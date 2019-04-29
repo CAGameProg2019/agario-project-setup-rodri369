@@ -17,11 +17,6 @@ class Vector {
 
     }
 
-    subMass(vec){
-        this.x -= vec.x;
-        this.y -= vec.y;
-        return this;
-    }
 
     dist(vec){
         let x = vec.x - this.x;

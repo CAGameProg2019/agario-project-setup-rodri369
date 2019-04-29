@@ -13,15 +13,16 @@ class Player extends Food {
 
         let dist = vel.magnitude();
         if(dist>0){
-        vel.toDirVec();
+            vel.toDirVec();
 
-        vel.scale(this.maxSpeed);
-        if(dist<this.radius){
-            vel.scale(dist/this.radius);
-        }
-        this.addVector(vel);
+            vel.scale(this.maxSpeed);
+            if(dist<this.radius){
+                vel.scale(dist/this.radius);
+            }
+            this.addVector(vel);
         }
     }
+
     draw(c){
         c.lineWidth = this.radius*.075;
         c.strokeStyle = this.stroke;
@@ -38,6 +39,10 @@ class Player extends Food {
         c.fillText(this.name, this.x,this.y);
 
 
+    }
+
+    decrSpeed (s) {
+        this.maxSpeed -= s;
     }
 }
 Object.assign(Player, Food);

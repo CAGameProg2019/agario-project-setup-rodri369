@@ -4,7 +4,7 @@ class Food extends Vector{
         super(x, y);
         this.radius = radius;
         this.color = color;
-        }
+    }
 
     draw(c){
         c.fillStyle = this.color;
@@ -23,15 +23,17 @@ class Food extends Vector{
     }
 
 
-    get mass(){
-        return Math.PI * this.radius *this.radius;
+    getMass(){
+        return Math.PI * this.radius * this.radius;
     }
 
-    set mass(newmass) {
+    setMass(newmass) {
         this.radius = Math.sqrt(newmass/ Math.PI);
     }
+
     addMass(m){
-        this.mass +=m;
+        let mass = this.getMass() + m;
+        this.radius = Math.sqrt(mass/ Math.PI);
     }
 
 }
